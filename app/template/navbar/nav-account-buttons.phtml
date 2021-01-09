@@ -1,0 +1,27 @@
+<label for="hamburger">&#9776;</label>
+<input type="checkbox" id="hamburger"/>
+
+<?php
+if (!isset($_SESSION["id"])) {
+?>
+
+<ul>
+    <li><a href="?page=login" id="navbar-login-button" class="nav-item">Login</a></li>
+    <li><a href="?page=register" id="navbar-register-button" class="nav-item">Join Us!</a></li>
+</ul>
+
+<?php
+} else {
+    $name = $_SESSION["username"];
+    $id = $_SESSION["id"];
+?>
+
+<ul>
+    <li><a href="?page=recipe&action=create" id="navbar-recipe-button" class="nav-item">Create Recipe</a></li>
+    <li><a href="?page=user&uid=<?= $id ?>" id="navbar-acct-button" class="nav-item"><?= $name ?></a></li>
+    <li><a href="?page=logout" id="navbar-logout-button" class="nav-item">Logout</a></li>
+</ul>
+
+<?php
+}
+?>

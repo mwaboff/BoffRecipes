@@ -1,0 +1,37 @@
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
+
+
+<?php
+$addtl_title = "";
+if(isset($RENDER_VARS) && isset($RENDER_VARS["title"])) {
+    $addtl_title .= " - " . $RENDER_VARS["title"];
+}
+?>
+<title>Boff's Better Baking <?= $addtl_title ?></title>
+
+<link rel="stylesheet" href="app/view/Application/css/style.css">
+<link rel="stylesheet" href="app/view/Navbar/css/navbar.css">
+
+<?php
+if (isset($RENDER_VARS)) {
+    if (isset($RENDER_VARS["css"])) {
+        insertCSSFilesFromArray($RENDER_VARS["css"]);
+    }
+
+    if (isset($RENDER_VARS["js"])) {
+        insertJSFilesFromArray($RENDER_VARS["js"]);
+    }
+}
+?>
+
+</head>
+
+<body>
+
+<div class="main">

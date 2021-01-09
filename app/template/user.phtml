@@ -1,0 +1,25 @@
+<?php include("core/header.phtml") ?>
+<?php include("navbar/navbar.phtml") ?>
+<div class="content">
+
+<div class="user-information">
+    <div class="user-name-container">
+        <h1><?= isset($RENDER_VARS["username"]) ? $RENDER_VARS["username"] : "" ?></h1>
+        <div class="user-edit">
+            <?php include("user-edit-menu.phtml") ?>
+        </div>
+    </div>
+    <div class="user-info">
+        <div class="user-email">
+            Email: <?= isset($RENDER_VARS["email"]) ? $RENDER_VARS["email"] : "" ?>
+        </div>
+        <div class="user-joined">
+            Joined: <?=isset($RENDER_VARS["join_date"]) ? $RENDER_VARS["join_date"] : ""?>
+        </div>
+    </div>
+</div>
+
+<?php include("user-recipes.phtml") ?>
+
+</div>
+<?php include("core/footer.phtml") ?>

@@ -1,0 +1,26 @@
+<div class="recipe-tile-container">
+
+<?php
+
+if(isset($RENDER_VARS["recipes"])) {
+    foreach ($RENDER_VARS["recipes"] as $recipe) {
+?>
+
+<a href="?page=recipe&id=<?=$recipe['id']?>" class="recipe-tile-link">
+    <div class="recipe-tile">
+        <div class="recipe-tile-image-container">
+            <img class="recipe-tile-image" src="?page=image&width=100&height=100&id=<?= isset($recipe["image_id"]) ? $recipe["image_id"] : "1"; ?>">
+        </div>
+        <div class="recipe-tile-info">
+            <div class="recipe-tile-title"><?= isset($recipe["recipe_name"]) ? $recipe["recipe_name"]: ""; ?></div>
+            <div class="recipe-tile-description"><?= isset($recipe["description"]) ? $recipe["description"] : ""; ?></div>
+        </div>
+     </div>
+</a>
+
+
+<?php
+    }
+}
+?>
+</div>

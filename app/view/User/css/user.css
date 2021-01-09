@@ -1,0 +1,25 @@
+.user-name-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-edit {
+    margin: 0px 20px;
+}
+
+
+.user-info {
+    color: #333333;
+    font-size: 14pt;
+    padding: 10px 0px;
+}
+
+.recipe-container {
+    margin-top: 20px;
+}
+
+.my-recipe-username {
+    font-size: 20pt;
+    font-weight: bold;
+}

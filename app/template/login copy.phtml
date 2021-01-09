@@ -1,0 +1,57 @@
+<?php include("core/header.phtml") ?>
+<?php include("navbar/navbar.phtml") ?>
+
+<div class="login-outer-wrapper">
+<div class="login-container">
+
+    <div class="login-header">
+        <div class="login-title">Login</div>
+    </div>
+
+    <div class="login-body">
+        <form class="login-form" id="login-form" method="POST" action="?page=login">
+            
+            <div id="login-error"><?= isset($RENDER_VARS["err_msg"]) ? $RENDER_VARS["err_msg"] : ""; ?></div>
+            
+            <?php require("forms/csrf.phtml") ?>
+            <?php require("forms/post.phtml") ?>
+            
+            <div class="form-section">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    name="username" 
+                    class="form-input" 
+                    id="username-field" 
+                    autofocus
+                    value="<?= isset($RENDER_VARS["old_username"]) ? $RENDER_VARS["old_username"] : ""; ?>" 
+                >
+            </div>
+
+            <div class="form-section">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    name="password" 
+                    class="form-input"
+                    id="password-field" 
+                    value="<?= isset($RENDER_VARS["old_password"]) ? $RENDER_VARS["old_password"] : ""; ?>"
+                >
+            </div>
+
+            <div class="login-register-button-group">
+                <div class="main-button-group">
+                    <button class="recipe-button primary-button" id="login-button" type="submit">Login</button>
+                    <button class="recipe-button secondary-button" id="guest-button">Guest</button>
+                </div>
+                <div class="alt-button-group">
+                    <button class="recipe-button secondary-button" id="register-button">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
+
+<?php include("core/footer.phtml") ?>

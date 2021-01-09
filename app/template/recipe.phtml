@@ -1,0 +1,39 @@
+<?php include("core/header.phtml") ?>
+<?php include("navbar/navbar.phtml") ?>
+<div class="content">
+
+<div class="title-section">
+
+    <div class="title-name-section">
+        <div class="recipe-title">
+            <?= isset($RENDER_VARS["recipe_name"]) ? $RENDER_VARS["recipe_name"] : ""; ?>
+        </div>
+        <div class="recipe-edit">
+            <?php include("recipe-edit-menu.phtml") ?>
+        </div>
+    </div>
+</div>
+
+<div class="recipe-description-section">
+    <div class="recipe-description">
+        <?= isset($RENDER_VARS["description"]) ? $RENDER_VARS["description"] : ""; ?>
+    </div>
+    <div class="author-link">
+        Submitted by 
+        <a href="?page=user&uid=<?= isset($RENDER_VARS["author_id"]) ? $RENDER_VARS["author_id"] : ""; ?>">
+            <?= isset($RENDER_VARS["author_name"]) ? $RENDER_VARS["author_name"] : ""; ?></a>.
+    </div>
+</div>
+
+<div class="recipe-section">
+    <div class="recipe-section-title">Ingredients</div>
+    <div class="recipe-ingredients"><?= isset($RENDER_VARS["ingredients"]) ? $RENDER_VARS["ingredients"] : ""; ?></div>
+</div>
+
+<div class="recipe-section">
+    <div class="recipe-section-title">Instructions</div>
+    <div class="recipe-instructions"><?= isset($RENDER_VARS["instructions"]) ? $RENDER_VARS["instructions"] : ""; ?></div>
+</div>
+
+</div>
+<?php include("core/footer.phtml") ?>

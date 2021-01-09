@@ -1,0 +1,11 @@
+<div class="recipe-container" id="my-recipes-list">
+    <div class="my-recipe-username">
+        <?= isset($RENDER_VARS["username"]) ? $RENDER_VARS["username"] : "" ?>'s Recipes
+    </div>
+
+    <?php 
+    if(isset($RENDER_VARS["my_recipes"])) {
+        $RENDER_VARS["recipes"] = $RENDER_VARS["my_recipes"];
+        include("recipe-tiles.phtml");
+    } ?>
+</div>

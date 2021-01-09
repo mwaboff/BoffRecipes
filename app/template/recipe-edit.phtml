@@ -1,0 +1,53 @@
+<?php include("core/header.phtml") ?>
+<?php include("navbar/navbar.phtml") ?>
+<div class="content">
+<div class="page-title">Edit Recipe</div>
+
+<form class="boff-bakery-form" action="?page=recipe&action=edit&id=<?= $RENDER_VARS["id"] ?>" method="POST" enctype="multipart/form-data">
+
+    <?php require("forms/csrf.phtml") ?>
+    <?php require("forms/put.phtml") ?>
+
+    <div class="form-section">
+        <label class="form-label" for="recipe-name">Recipe Title *</label>
+        <input type="text" name="recipe-name" class="form-input" id="recipe-name-field" autofocus value="<?= isset($RENDER_VARS["old-recipe-name"]) ? $RENDER_VARS["old-recipe-name"] : "" ?>">
+    </div>
+
+    <div class="form-section">
+        <label class="form-label" for="recipe-picture">Picture (.png only)</label><br>
+        <input type="file" name="recipe-picture" class="recipe-picture" id="fileToUpload" data-required="false">
+    </div>
+
+    <div class="form-section">
+        <label class="form-label" for="recipe-description">Description *</label>
+        <input type="text" name="recipe-description" class="form-input smaller-input-text" id="recipe-description-field" value="<?= isset($RENDER_VARS["old-recipe-description"]) ? $RENDER_VARS["old-recipe-description"] : "" ?>">
+    </div>
+
+    <div class="form-section">
+        <label class="form-label" for="recipe-ingredients">Ingredients *</label>
+        <textarea type="textarea" name="recipe-ingredients" class="form-input large-input smaller-input-text" id="recipe-ingredients-field" /><?= isset($RENDER_VARS["old-recipe-ingredients"]) ? $RENDER_VARS["old-recipe-ingredients"] : "" ?></textarea>
+    </div>
+
+    <div class="form-section">
+        <label class="form-label" for="recipe-instructions">Instructions *</label>
+        <textarea type="textarea" 
+            name="recipe-instructions" 
+            class="form-input large-input smaller-input-text" 
+            id="recipe-instructions-field" /><?= isset($RENDER_VARS["old-recipe-instructions"]) ? $RENDER_VARS["old-recipe-instructions"] : "" ?></textarea>
+    </div>
+
+    
+    <div class="recipe-button-group">
+        <div class="main-button-group">
+            <button type="submit" class="recipe-button primary-button">Save</button>
+            <button type="submit" class="recipe-button secondary-button" id="cancel-button">Cancel</button>
+        </div>
+        <div class="alt-button-group">
+            <button class="recipe-button  warning-button" id="delete-button">Delete</button>
+        </div>
+    </div>
+</form>
+
+
+</div>
+<?php include("core/footer.phtml") ?>

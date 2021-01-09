@@ -1,0 +1,78 @@
+.recipe-button {
+    margin-right: 5px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 10pt;
+    outline: none;
+    font-size: 12pt;
+    font-weight: 520;
+    border: 1px solid var(--primary-color);
+    box-shadow: 1px 1px 3px rgba(30, 30, 30, 0.5);
+    cursor: pointer;
+}
+
+.recipe-button:focus {
+    outline: none;
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.primary-button {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.secondary-button {
+    background: var(--login-body-background);
+    color: var(--primary-color);
+}
+
+.warning-button {
+    background: red !important;
+    color: white;
+    border: 1px solid red;
+}
+
+.form-section {
+    margin: 10px 0px;
+}
+
+.form-label {
+    font-size: 12pt;
+    font-variant-caps: all-small-caps;
+}
+
+.form-input {
+    height: 40px;
+    padding: 5px;
+    font-size: 20pt;
+    width: 100%;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+.form-input:focus {
+    outline: none;
+    border: 1px solid var(--primary-color) !important;
+}
+
+.smaller-input-text {
+    font-size: 15pt;
+}
+
+.large-input {
+    height: 200px;
+}
+
+.bad-field {
+    background: rgb(255, 151, 151);
+}
+
+.form-error-message {
+    color: red;
+    margin-left: 15px;
+}
+
+.edit-icon {
+    height: 15px;
+    width: 15px;
+}

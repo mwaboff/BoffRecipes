@@ -1,0 +1,42 @@
+:root {
+
+    --primary-color: #F08237;
+    --secondary-color: #FFFFFF;
+    --accent-color: #000000;
+    --background: #FFFFFF;
+
+    --text-color: var(--accent-color);
+
+    --top-row-height: 40px;
+    --bottom-row-height: 60px;
+    --content-width: 960px;
+
+    --border-radius: 4px;
+
+    --transition-speed: 250ms;
+}
+
+@media screen and (max-width: 1060px) {
+    :root {
+        --content-width: 763px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        --content-width: 100%;
+        --bottom-row-height: 200px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    :root {
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root {
+    }
+}
